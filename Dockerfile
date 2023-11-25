@@ -5,7 +5,7 @@ EXPOSE 8000
 
 ENV SECRET_KEY ${SECRET_KEY}
 
-ENV DEBUG False
+ENV DEBUG True
 
 # Keeps Python from generating .pyc files in the container
 ENV PYTHONDONTWRITEBYTECODE=1
