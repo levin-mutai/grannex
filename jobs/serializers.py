@@ -8,14 +8,32 @@ class JobSerializer(serializers.ModelSerializer):
         model = Jobs
         fields = '__all__'
 
-class ApplicantsSerializer(serializers.ModelSerializer):
+class ApplicantPostSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Applicants
+        fields = '__all__'
+    
+    
+
+class ApplicantsSerializer(ApplicantPostSerializer):
     user = UserListSerializer(read_only=True)
     class Meta:
         model = Applicants
         fields = '__all__'
+    
+    def get_photo_url(self, obj):
+        request = self.context.get('request')
+        photo_url = obj.fingerprint.url
+        return request.build_absolute_uri(photo_url)
+    
+        
         
 class ApplicantSerializer(ApplicantsSerializer):
     job = JobSerializer(read_only=True)
     class Meta:
         model = Applicants
-    
+        fields = '__all__'
+    def get_photo_url(self, obj):
+        request = self.context.get('request')
+        photo_url = obj.fingerprint.url
+        return request.build_absolute_uri(photo_url)

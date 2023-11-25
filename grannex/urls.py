@@ -29,12 +29,19 @@ from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from rest_framework.documentation import include_docs_urls
 from drf_yasg import openapi
+from django.conf import settings
+from django.conf.urls.static import static
+
+
+admin.site.site_header  =  "Grannex"
+admin.site.site_title  =  "Grannex"
+admin.site.index_title  =  "Grannex"
 
 schema_view = get_schema_view(
     openapi.Info(
         title="GrannexAPI",
         default_version="0.0.1",
-        description="""This is an API for Grannex.\n\n For you to use this API you need to first login. You can do that using the user login route(user/login). If not yet a user please register using the user register route(user/register).\n\n After successful login you will get both `access` and `refresh` token. You will need the `access` token for **Authorization**\n\nIf using curl or any other tool make sure to pass `Authorization` as a header with a value of the Bearers token e.g \n\n ```curl -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk2MzY5MTc2LCJpYXQiOjE2OTYzNjE5NzYsImp"``` """,
+        description="""This is an API for Grannex.To access  redoc documentation page please visit ```/redoc```.\n\n For you to use this API you need to first login. You can do that using the user login route(user/login). If not yet a user please register using the user register route(user/register).\n\n After successful login you will get both `access` and `refresh` token. You will need the `access` token for **Authorization**\n\nIf using curl or any other tool make sure to pass `Authorization` as a header with a value of the Bearers token e.g \n\n ```curl -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk2MzY5MTc2LCJpYXQiOjE2OTYzNjE5NzYsImp"``` """,
         terms_of_service="https://www.yourapp.com/terms/",
         contact=openapi.Contact(email="levinmutai@gmail.com"),
         license=openapi.License(name="MIT"),
@@ -55,6 +62,6 @@ urlpatterns = [
         name="schema-swagger-ui",
     ),
     re_path(
-        r"^redoc/$", schema_view.with_ui("redoc", cache_timeout=0), name="schema-redoc"
+        "redoc", schema_view.with_ui("redoc", cache_timeout=0), name="schema-redoc"
     ),
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

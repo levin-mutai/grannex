@@ -51,12 +51,12 @@ class User(AbstractBaseUser):
     last_login = models.DateTimeField(verbose_name="last login", auto_now=True)
     is_admin = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
-    is_staff = models.BooleanField(default=False)
+    is_staff = models.BooleanField(default=True)
     is_superuser = models.BooleanField(default=False)
 
 
-    USERNAME_FIELD = "email"
-    REQUIRED_FIELDS = ["username", "full_name"]
+    USERNAME_FIELD = "username"
+    REQUIRED_FIELDS = ["email", "full_name"]
 
     objects = myAccountManager()
 
