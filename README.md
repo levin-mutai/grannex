@@ -30,11 +30,11 @@ This project was developed as part of an interview evaluation process with Savan
 
 ## Swagger
 
-[Swagger Documentation Link](https://grannex.azurewebsites.net)
+[Swagger Documentation ](https://grannex.azurewebsites.net)
 
 ## Redocs
 
-[Redocs Link](https://grannex.azurewebsites.net/redoc)
+[Link to redocs](https://grannex.azurewebsites.net/redoc)
 
 <!-- ## PostMan Collection
 

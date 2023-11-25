@@ -32,7 +32,9 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
     '0.0.0.0',
-    'grannex.azurewebsites.net'
+    'grannex.azurewebsites.net',
+
+    
 ]
 
 LOGIN_URL = "api/users/login"
