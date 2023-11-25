@@ -5,6 +5,9 @@ from .serializers import *
 from .models import *
 from grannex.permisions import IsAdminUserOrIsAuthenticatedReadOnly
 
+from django.views.decorators.cache import cache_page
+from django.utils.decorators import method_decorator
+
 
 class LargePagination(pagination.PageNumberPagination):
     """Class for custom Pagination"""
@@ -43,7 +46,7 @@ class JobsViewSet(viewsets.ModelViewSet):
         self.perform_create(serializer)
         headers = self.get_success_headers(serializer.data)
         return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
-    
+    @method_decorator(cache_page(60 * 15, key_prefix="IP_LISTS"))
     def list(self, request, *args, **kwargs):
         queryset = self.get_queryset()
         serializer = self.get_serializer(queryset, many=True)

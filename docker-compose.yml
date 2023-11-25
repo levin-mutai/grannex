@@ -2,7 +2,7 @@ version: "3.4"
 
 services:
   grannex:
-    image: grannex
+    image: sav4ner/grannex
     build:
       context: .
       dockerfile: ./Dockerfile

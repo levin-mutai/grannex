@@ -3,9 +3,9 @@ FROM python:3.10-slim
 
 EXPOSE 8000
 
-# ENV SECRET_KEY ${SECRET_KEY}
+ENV SECRET_KEY ${SECRET_KEY}
 
-ENV DEBUG True
+ENV DEBUG False
 
 # Keeps Python from generating .pyc files in the container
 ENV PYTHONDONTWRITEBYTECODE=1
