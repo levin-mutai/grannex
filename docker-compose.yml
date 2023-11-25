@@ -1,4 +1,4 @@
-version: '3.4'
+version: "3.4"
 
 services:
   grannex:
@@ -6,5 +6,9 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile
+      args:
+        SECRET_KEY: ${SECRET_KEY}
+    environment:
+      - SECRET_KEY=${SECRET_KEY}
     ports:
       - 8000:8000
