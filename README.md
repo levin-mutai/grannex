@@ -2,11 +2,31 @@
 
 screening task for Grannex
 
-# Kiosk.Backend (Savannah Informatics)
+# Grannex.Backend
 
 This project was developed as part of an interview evaluation process with Savannah Informatics.
 
-# Read The Docs
+# Table of Contents
+
+- [Docs](#docs)
+  - [Swagger](#swagger)
+  - [Redocs](#redocs)
+- [DataBase Schema](#database-schema)
+- [Run Locally](#run-locally)
+- [Run with Docker](#run-with-docker)
+- [Run Tests](#run-tests)
+- [Check Code Coverage](#check-code-coverage)
+  - [Sample Report](#sample-report)
+- [Tools & Technologies](#tools--technologies)
+  - [Languages and Frameworks](#languages-and-frameworks)
+  - [Testing & Code Coverage](#testing--code-coverage)
+  - [CI/CD](#cicd)
+  - [Features](#features)
+    - [Pagination](#pagination)
+    - [Security](#security)
+    - [Caching](#caching)
+
+# Docs
 
 ## Swagger
 
@@ -16,13 +36,13 @@ This project was developed as part of an interview evaluation process with Savan
 
 [Redocs Link](https://grannex.azurewebsites.net/redoc)
 
-## PostMan Collection
+<!-- ## PostMan Collection
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/18483082-d8f9f954-4126-4de3-8a01-dae6d37940f7?action=collection%2Ffork&collection-url=entityId%3D18483082-d8f9f954-4126-4de3-8a01-dae6d37940f7%26entityType%3Dcollection%26workspaceId%3D1a9dcbf2-a7ea-43bb-b6a7-d25bc66dcb08)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/18483082-d8f9f954-4126-4de3-8a01-dae6d37940f7?action=collection%2Ffork&collection-url=entityId%3D18483082-d8f9f954-4126-4de3-8a01-dae6d37940f7%26entityType%3Dcollection%26workspaceId%3D1a9dcbf2-a7ea-43bb-b6a7-d25bc66dcb08) -->
 
 # DataBase Schema
 
-![deployment](assets/databaseERD.png)
+![Database ERD](assets/image.png)
 
 # Run Locally
 
@@ -96,3 +116,19 @@ coverage report
 
 - [GithubAction](https://github.com/features/actions)
   GitHub Actions makes it easy to automate all your software workflows, now with world-class CI/CD. Build, test, and deploy your code right from GitHub. Make code reviews, branch management.
+
+## Features
+
+1. ### Pagination
+
+- Implemented pagination using DRF's built-in pagination classes, providing users with an organized and navigable interface.
+
+2. ### Security
+
+- Ensured API security through DRF's authentication and permission classes.
+- Implemented authentication mechanisms, including token-based authentication, for secure user access.
+- Utilized permission classes to control access to various views or actions based on user roles and permissions.
+
+3. ### Caching
+
+- Used DRF's caching mechanisms to cache frequently accessed API responses.
