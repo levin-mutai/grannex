@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from rest_framework.permissions import IsAdminUser
 from .serializers import *
 from .models import *
-from grannex.permisions import IsAdminUserOrIsAuthenticatedReadOnly
+from grannex.permisions import IsAdminUserOrIsAuthenticatedReadOnly,IsAdminReadOnly
 
 from django.views.decorators.cache import cache_page
 from django.utils.decorators import method_decorator
@@ -23,7 +23,7 @@ class JobsViewSet(viewsets.ModelViewSet):
     lookup_field = 'id'
     http_method_names = ['get', 'post', 'put', 'delete']
     pagination_class =LargePagination
-    permission_classes = [IsAdminUserOrIsAuthenticatedReadOnly]
+    permission_classes = [IsAdminReadOnly]
 
     def get_queryset(self):
         return self.queryset
@@ -83,6 +83,7 @@ class ApplicantsViewSet(viewsets.ModelViewSet):
     lookup_field = 'id'
     http_method_names = ['get', 'post', 'put', 'delete']
     pagination_class = LargePagination
+    permission_classes = [IsAdminUserOrIsAuthenticatedReadOnly]
     def get_queryset(self):
         return self.queryset
     
@@ -156,16 +157,3 @@ class ApplicantsViewSet(viewsets.ModelViewSet):
 
 
     
-
-    """
-    {
-  "company": "Safaricom",
-  "location": "Nairobi,Kenya",
-  "url": "https://carrier.safaricom.com",
-  "application_deadline": "2023-11-27",
-  "description": "Justa normal job, you should all appy",
-  "title": "Software Engineer",
-  "category": 0
-}
-    
-    """
