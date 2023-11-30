@@ -36,9 +36,9 @@ This project was developed as part of an interview evaluation process with Savan
 
 [Link to redocs](https://grannex.azurewebsites.net/redoc)
 
-<!-- ## PostMan Collection
+## PostMan Collection
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/18483082-d8f9f954-4126-4de3-8a01-dae6d37940f7?action=collection%2Ffork&collection-url=entityId%3D18483082-d8f9f954-4126-4de3-8a01-dae6d37940f7%26entityType%3Dcollection%26workspaceId%3D1a9dcbf2-a7ea-43bb-b6a7-d25bc66dcb08) -->
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/18483082-04e7f5b8-fa10-4c9a-964e-8278da374038?action=collection%2Ffork&collection-url=entityId%3D18483082-04e7f5b8-fa10-4c9a-964e-8278da374038%26entityType%3Dcollection%26workspaceId%3Dcf222119-a9e3-4dd8-96fe-328c516d2f27)
 
 # DataBase Schema
 
