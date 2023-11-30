@@ -32,7 +32,7 @@ class IsAdminReadOnly(permissions.BasePermission):
             and request.user.is_authenticated
             
         ):
-            return False
+            return True
         if request.method == "GET":
             return True
         
@@ -45,7 +45,6 @@ class IsAdminReadOnly(permissions.BasePermission):
 
         if (request.method == "PUT" 
         and request.user.is_authenticated 
-        and not request.user.is_admin
         ):
             return False
 
