@@ -28,9 +28,9 @@ class IsAdminUserOrIsAuthenticatedReadOnly(permissions.BasePermission):
 class IsAdminReadOnly(permissions.BasePermission):
     def has_permission(self, request, view):
         if (
-            request.method == "POST" and request.user.is_admin
+            request.method == "POST" and not request.user.is_admin
         ):
-            return True
+            return False
         if request.method == "GET":
             return True
         
@@ -41,7 +41,7 @@ class IsAdminReadOnly(permissions.BasePermission):
         ):
             return True
 
-        if request.method == "PUT" and request.user.is_admin:
-            return True
+        if request.method == "PUT" and not request.user.is_admin:
+            return False
 
         return False
