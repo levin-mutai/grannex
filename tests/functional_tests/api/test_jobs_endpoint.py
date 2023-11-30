@@ -13,6 +13,8 @@ class TestCreate:
     def test_create_single_job_successfully(self, apiclient):
         # Create a user
         user = User.objects.create_user(email="test@email.com", full_name="test user", username='testuser', password='testpassword')
+        user.is_admin = True
+        user.save()
 
         
         apiclient.force_authenticate(user)
@@ -40,7 +42,8 @@ class TestCreate:
     def test_create_multiple_jobs_successfully(self, apiclient):
        
         user = User.objects.create_user(email="test@email.com", full_name="test user", username='testuser', password='testpassword')
-
+        user.is_admin = True
+        user.save()
      
         apiclient.force_authenticate(user)
 
@@ -83,7 +86,8 @@ class TestCreate:
     def test_create_single_job_missing_fields(self, apiclient):
         # Create a user
         user = User.objects.create_user(email="test@example.com", full_name="test user", username='testuser', password='testpassword')
-
+        user.is_admin = True
+        user.save()
         apiclient.force_authenticate(user)
 
         request_data = {
